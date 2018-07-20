@@ -35,7 +35,7 @@ print(len(data)) # 10000
 ```
 
     10000
-    
+
 
 ### Detecting Non-Normal Datasets
 
@@ -47,18 +47,11 @@ In the cell below, use `seaborn`'s `distplot` method to visualize a histogram of
 
 
 ```python
-sns.distplot(data)
+sns.distplot(data);
 ```
 
 
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x15157cd4f60>
-
-
-
-
-![png](output_5_1.png)
+![png](index_files/index_5_0.png)
 
 
 As expected, this dataset is not normally distributed.  
@@ -104,7 +97,7 @@ print(test_sample[:5]) # [56, 12, 73, 24, 8] (This will change if you run it mut
 ```
 
     [56, 12, 73, 24, 8]
-    
+
 
 ### Generating a Sample Mean
 
@@ -120,8 +113,8 @@ test_sample2_mean = get_sample_mean(test_sample2)
 print(test_sample2_mean) # 45.3 (This will also change if you run it multiple times)
 ```
 
-    49.7
-    
+    45.3
+
 
 ### Creating a Sample Distribution of Sample Means
 
@@ -144,8 +137,8 @@ test_sample_dist = create_sample_distribution(data)
 print(test_sample_dist[:5]) # [54.53333333333333, 60.666666666666664, 37.3, 39.266666666666666, 35.9]
 ```
 
-    [54.53333333333333, 60.666666666666664, 37.3, 39.266666666666666, 35.9]
-    
+    [48.86666666666667, 39.43333333333333, 49.7, 54.53333333333333, 60.666666666666664]
+
 
 ### Visualizing the Sample Distribution as it Becomes Normal
 
@@ -159,18 +152,11 @@ In the cell below, create a sample distribution from `data` of `dist_size` 10, w
 ```python
 # Visualize sample distribution with n=3, 10, 30, across across mutliple iterations
 sample_dist_10 = create_sample_distribution(data, 10, 3)
-sns.distplot(sample_dist_10)
+sns.distplot(sample_dist_10);
 ```
 
 
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x1515b20e5c0>
-
-
-
-
-![png](output_16_1.png)
+![png](index_files/index_16_0.png)
 
 
 Now, let's increase the `dist_size` to 30, and `n` to 10.  Create another visualization to compare how it changes as size increases.  
@@ -178,18 +164,11 @@ Now, let's increase the `dist_size` to 30, and `n` to 10.  Create another visual
 
 ```python
 sample_dist_30 = create_sample_distribution(data, 30, 10)
-sns.distplot(sample_dist_30)
+sns.distplot(sample_dist_30);
 ```
 
 
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x1515b37d978>
-
-
-
-
-![png](output_18_1.png)
+![png](index_files/index_18_0.png)
 
 
 The data is already looking much more 'normal' than the first sample distribution, and much more 'normal' that the raw non-normal distribution we're sampling from. 
@@ -199,18 +178,11 @@ In the cell below, create another sample distribution of `data` with `dist_size`
 
 ```python
 sample_dist_1000 = create_sample_distribution(data, 1000, 30)
-sns.distplot(sample_dist_1000)
+sns.distplot(sample_dist_1000);
 ```
 
 
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x1515b39f208>
-
-
-
-
-![png](output_20_1.png)
+![png](index_files/index_20_0.png)
 
 
 Great! As we can see, the dataset _approximates_ a normal distribution. It isn't pretty, but it's generally normal enough that we can use it to answer questions using z-scores and p-values.  
